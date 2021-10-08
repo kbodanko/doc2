@@ -1,0 +1,533 @@
+body{
+    margin: 0;
+    font-family: 'Oswald', sans-serif;
+}
+header{
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-position: center;
+}
+*{
+    scroll-margin-top: 7rem
+}
+#header_nav{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+#header_info{
+    display: flex;
+    padding: .2rem 0;
+    background-color: rgba(6, 12, 36, 0.8);
+    color: white;
+    font-size: .8rem;
+    font-weight: 300;
+}
+.header_info_wraper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .6rem;
+}
+.header_info_wraper img{
+    height: 16px;
+    filter: invert(100%);
+    margin: 0 .2rem;
+}
+/* .media600{
+    display: none;
+} */
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.941);
+    box-shadow: 0 0 5px 2px rgb(49, 114, 119);;
+}
+#navbar_logo{
+    padding: .2rem .5rem;
+    display: flex;
+    flex-direction: column;
+}
+#navbar_logo img{
+    height: 60px;
+}
+#navbar_logo_inscription{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Indie Flower', cursive;
+    color: rgba(87, 87, 87);
+}
+#navbar_logo_inscription p{
+    white-space: nowrap;
+    margin: 0;
+    font-variant: small-caps;
+    font-size: 1rem;
+    font-weight: 900;
+    text-align: center;
+}
+#navbar_menu{
+    display: flex;
+    align-items: center;
+    font-variant: small-caps;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.navbar_menu_option{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: rgb(121, 189, 206);
+}
+.navbar_menu_option p{
+    margin: 0;
+    padding: 0 1.2rem;
+}
+.navbar_menu_option:hover{
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    background-color: rgb(121, 189, 206);
+}
+aside{
+    display: flex;
+    justify-content: center;
+}
+.prompts{
+    position: absolute;
+    top: 15rem;
+    display: flex;
+    justify-content: center;
+    visibility: hidden;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(111, 111, 111);
+}
+.prompts_window{
+    /* display: none; */
+    /* display: flex; */
+    /* font-family: 'Raleway', sans-serif;
+position: absolute;
+top: 15rem; */
+    /* visibility: hidden; */
+    z-index: 5;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    width: 25%;
+    background-color: white;
+    position: relative;
+    padding: 1rem 1.5rem;
+    text-align: justify;
+    border-radius: .4rem;
+}
+#window3{
+    margin-top: -14rem;
+    z-index: 9;
+}
+.ok_button{
+    color: white;
+    background-color: rgb(121, 189, 206);
+    border: none;
+    padding: .3rem .6rem;
+    margin-top: 1rem;
+    border-radius: .3rem;
+    font-weight: 900;
+}
+.ok_button:focus{
+    scale: .9;
+}
+.ok_button:hover{
+    background-color: rgba(6, 12, 36, 0.9);
+}
+button{
+    cursor: pointer;
+}
+#buttons{
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    width: max-content;
+    align-items: center;
+    margin-top: 16rem;
+}
+.buttons_wraper{
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    margin-top: .7rem;
+    padding: .2rem;
+    cursor: pointer;
+    border-radius: 9px;
+}
+.buttons_wraper img{
+    height: 22px;
+    padding: 0 .25rem;
+}
+.buttons_options{
+    background-color: transparent;
+    font-size: 1.2rem;
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    color: rgba(6, 12, 36);
+    border: none;
+}
+.buttons_wraper:hover{
+    font-size: 1.25rem;
+    /* border-bottom: 2px solid rgb(121, 189, 206); */
+    background-color: rgb(220, 253, 252);
+}
+.buttons_wraper:hover .buttons_options{
+    scale: 1.05;
+
+}
+a{
+    text-decoration: none;
+    color: rgba(6, 12, 36);
+}
+article{
+    text-align: justify;
+    text-indent: 2rem;
+    font-family: 'Raleway', sans-serif;
+    background-color: rgba(255, 255, 255, 0.893);
+    color: rgb(111, 111, 111);
+    margin: 3rem 0;
+    padding: 1rem 2rem 2rem 2rem;
+    /* margin-top: 37rem; */
+}
+h1{
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+    color: rgb(70, 70, 70);
+    font-size: 2rem;
+    margin: 1rem;
+}
+#medical_icons{
+    display: flex;
+    justify-content: center;
+}
+#medical_icons img{
+    height: 32px;
+    margin: 0 .7rem;
+}
+.content{
+    transition: .3s; 
+}
+#menu_option1{
+    background-color: white;
+}
+#menu_option1 .heigh{
+    padding-bottom: 0;
+}
+#menu_option5 .heigh{
+    color: white;
+}
+.content->h1{
+    margin: 2rem 0;
+}
+.heigh{
+    padding: 3rem 0;
+}
+.content_wraper{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(111, 111, 111);
+    margin: 2rem 2rem 0 2rem;
+    padding-bottom: 6rem;
+}
+.content_wraper p{
+    margin: 0;
+    padding: .5rem;
+}
+#nurse{
+    visibility: hidden;
+    position: relative;
+    width: 24rem;
+    border-radius: 12rem;
+    float: left;
+    shape-outside: circle(55.52% at 186px 211px);
+    margin: 1rem 3rem 4rem 0;
+}
+#lab{
+    display: none;
+    visibility: hidden;
+    position: relative;
+    width: 10rem;
+    border-radius: 12rem;
+    float: right;
+    shape-outside: circle(53.38% at 100px 89px);
+    margin: 0.5rem 0 0 1rem;
+}
+ul{
+    font-family: 'Raleway', sans-serif;
+    color: rgb(111, 111, 111);
+    text-align: justify;
+}
+li{
+    margin: .6rem 0;
+}
+span{
+    font-weight: 700;
+}
+#bottom{
+    height: 9rem;
+}
+
+#up_arrow_wraper{
+    padding: .5rem;
+    position: fixed;
+    bottom: -5rem;
+    right: 2rem;
+    z-index: 9;
+    border-radius: 2rem;
+    cursor: pointer;
+    scale: 1.1;
+    background: linear-gradient(to right, rgba(149, 234, 255, 0.852), rgba(17, 30, 83, 0.85));
+    transition: .5s;
+}
+#up_arrow_wraper:hover{
+    background: linear-gradient(to right, rgba(121, 189, 206), rgba(6, 12, 36));
+}
+#up_arrow{
+    display: flex;
+    justify-content: end;
+}
+#up_arrow img{
+    height: 3rem;
+}
+
+#menu_option5{
+    overflow: hidden;
+    background-image: url(img/334700.jpg);
+    background-position: center;
+    background-size: cover;
+    background-size: cover;
+    filter: brightness(50%);
+    height: 36rem;
+}
+#content_bg{
+    margin-top: -36rem;
+/*     filter: brightness(50%);
+ */
+}
+#content_bg h1{
+    /* filter: brightness(100%); */
+    color: white;
+}
+#content_photo{
+    display: flex;
+}
+#content_bg_wraper{
+    width: 45%;
+}
+#contact_info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 2rem;
+}
+.contact_info_wraper:nth-child(1){
+    margin-left: -3rem;
+}
+.contact_info_wraper:nth-child(3){
+    margin-left: -3rem;
+}
+.contact_info_wraper:nth-child(2){
+    margin-right: -3rem;
+}
+.contact_info_wraper:nth-child(4){
+    margin-right: -3rem;
+}
+.contact_info_wraper{
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    background: linear-gradient(to right, #08312bb5, #a2dbd57a);    
+    width: 50%;
+    margin: .8rem 0;
+    border-radius: .5rem;
+    padding: .2rem .8rem;
+}
+.contact_info_wraper img{
+    height: 20px;
+    filter: invert(100%);
+    margin-right: .8rem;
+}
+#google_map{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+}
+#google_map iframe{
+    width: 100%;
+}
+#signature{
+    background-color: rgba(19, 22, 33, 0.89);
+    margin-bottom: 0;
+}
+#signature a{
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding-right: 1rem;
+}
+#signature:hover a{
+    color: white;
+}
+.darkgray{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: .2rem;
+    margin: 0;
+    width: 100%;
+    text-align: end;
+    background-color: rgba(6, 12, 36, 0.8);
+    color: white;
+    font-size: .8rem;
+    font-weight: 300;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 1
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@media(max-width:1200px){
+    .contact_info_wraper{
+        width: 60%;
+    }
+    .prompts_window{
+        width: 50%;
+    }
+}
+
+@media(max-width:1000px){
+    .contact_info_wraper{
+        width: 80%;
+    }
+}
+@media(max-width:900px){
+    .navbar_menu_option p{
+        padding: 0 .5rem;
+        font-size: 1.1rem;
+    }
+    #menu_option5{
+        height: 50rem;
+    }
+    #content_bg {
+        margin-top: -50rem;
+    }
+    .contact_info_wraper{
+        font-size: .9rem;
+    }
+    #nurse{
+        width: 20rem;
+        shape-outside: circle(50.34% at 167px 177px);
+    }
+    #google_map{
+        width: 80%;
+        height: 20rem;
+    }
+}
+@media(max-width:800px){
+    .navbar_menu_option p{
+        padding: 0 .3rem;
+    }
+}
+@media(max-width:700px){
+    aside{
+        justify-content: start;
+    }
+    #buttons{
+        align-items: flex-start;   
+        margin-left: .7rem; 
+    }
+    #menu_option0{
+        background-image: url(img/background4.jpg);
+    }
+    .navbar_menu_option p{
+        padding: 0 .2rem;
+        font-size: 1.05rem;
+        font-weight: 400;
+    }
+    .prompts_window{
+        width: 60%;
+    }
+    #nurse {
+        width: 15rem;
+        shape-outside: circle(50.34% at 116px 135px);
+    }
+    #lab{
+        display: block;
+    }
+    #content_bg_wraper{
+        margin-left: -5rem;
+    }
+    .heigh{
+        padding-bottom: 0;
+    }
+    #content_photo{
+        flex-direction: column;
+        align-items: center;
+    }
+    #contact_info{
+        width: 100%;
+    }
+    /* .contact_info_wraper:nth-child(1){
+        margin-left: -9rem;
+    }
+    .contact_info_wraper:nth-child(3){
+        margin-left: -9rem;
+    }
+    .contact_info_wraper:nth-child(2){
+        margin-right: -9rem;
+    }
+    .contact_info_wraper:nth-child(4){
+        margin-right: -9rem;
+    } */
+}
+@media(max-width:600px){
+    #header_info{
+        flex-direction: column;
+        align-items: start;
+    }
+    #header_info_wraper{
+        justify-content: start;
+    }
+    #header_info_wraper img{
+        margin: .2rem;
+    }
+    #google_map{
+        width: 90%;
+    }
+    #up_arrow_wraper{
+        transform: scale(.8);
+        right: 1rem;
+    }
+}
+@media(max-width:500px){
+    h1{
+        font-size: 1.5rem;
+    }
+    #medical_icons img{
+        height: 24px;
+    }
+    #content_bg_wraper {
+        width: 60%;
+    }
+    #nurse {
+        width: 10rem;
+        shape-outside: circle(44.86% at 79px 96px);
+    }
+}
