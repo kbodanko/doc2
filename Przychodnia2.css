@@ -217,10 +217,12 @@ h1{
 }
 #menu_option1 .heigh{
     padding-bottom: 0;
+    margin-top: 0;
 }
-#menu_option5 .heigh{
+/* #content_bg .heigh{
     color: white;
-}
+    margin-top: 0;
+} */
 .content->h1{
     margin: 2rem 0;
 }
@@ -293,8 +295,12 @@ span{
 #up_arrow img{
     height: 3rem;
 }
-
+#ombre{
+    transform: rotate(180deg);
+width: 100%;
+}
 #menu_option5{
+    margin-top: -.5rem;
     overflow: hidden;
     background-image: url(img/334700.jpg);
     background-position: center;
@@ -523,11 +529,19 @@ span{
     #medical_icons img{
         height: 24px;
     }
+    #content_wraper{
+        margin: 2rem .5rem 0 .5rem;
+    }
     #content_bg_wraper {
         width: 60%;
     }
     #nurse {
         width: 10rem;
         shape-outside: circle(44.86% at 79px 96px);
+    }
+    #lab{
+        width: 8REM;
+        shape-outside: circle(62.97% at 92px 75px);
+        margin: 0.5rem 0 0 1rem;
     }
 }
