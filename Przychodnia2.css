@@ -8,7 +8,15 @@ header{
     background-position: center;
 }
 *{
-    scroll-margin-top: 7rem
+    scroll-margin-top: 6.2rem
+}
+#mobile_menu{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    background-color: rgba(255, 255, 255,.95);
+    transform: translateY(-27rem);
+    transition: .7s;
 }
 #header_nav{
     position: fixed;
@@ -28,6 +36,7 @@ header{
     justify-content: center;
     align-items: center;
     margin-left: .6rem;
+    white-space: nowrap;
 }
 .header_info_wraper img{
     height: 16px;
@@ -40,8 +49,8 @@ header{
 nav{
     display: flex;
     justify-content: space-between;
-    background-color: rgba(255, 255, 255, 0.941);
-    box-shadow: 0 0 5px 2px rgb(49, 114, 119);;
+    background-color: rgba(255, 255, 255,.95);
+    box-shadow: -1px 0 15px 1px rgba(19, 49, 54, 0.27);
 }
 #navbar_logo{
     padding: .2rem .5rem;
@@ -66,6 +75,20 @@ nav{
     font-weight: 900;
     text-align: center;
 }
+#ham_menu{
+    display: none;
+    align-items: center;
+    padding-right: 1rem;
+}
+#ham_menu img{
+    height: 40px;
+    opacity: 0.6;
+    padding-right: 1rem;
+    cursor: pointer;
+}
+#ham_menu:focus{
+    transform: scale(.9);
+}
 #navbar_menu{
     display: flex;
     align-items: center;
@@ -88,6 +111,9 @@ nav{
     color: rgb(255, 255, 255);
     cursor: pointer;
     background-color: rgb(121, 189, 206);
+}
+.navbar_menu_option:focus{
+    scale: .9;
 }
 aside{
     display: flex;
@@ -174,7 +200,7 @@ button{
 .buttons_wraper:hover{
     font-size: 1.25rem;
     /* border-bottom: 2px solid rgb(121, 189, 206); */
-    background-color: rgb(220, 253, 252);
+    background-color: rgba(121, 189, 206, 0.466)
 }
 .buttons_wraper:hover .buttons_options{
     scale: 1.05;
@@ -234,6 +260,8 @@ h1{
     color: rgb(111, 111, 111);
     margin: 2rem 2rem 0 2rem;
     padding-bottom: 6rem;
+    text-align: justify;
+    text-indent: 1.5rem;
 }
 .content_wraper p{
     margin: 0;
@@ -504,15 +532,53 @@ width: 100%;
     } */
 }
 @media(max-width:600px){
+    #menu_option0{
+        background-position-y: -3rem;
+    }
+    #ham_menu{
+        display: flex;
+    }
+    #navbar_logo img{
+        height: 40px;
+    }
+    #navbar_menu{
+        margin: 1rem 0;
+    }
+    .navbar_menu_option{
+        display: flex;
+        justify-content: center;
+        width: 65%;
+        text-align: center;
+        border-bottom: 1px solid  rgba(141, 199, 195, 0.418);
+    }
+    .navbar_menu_option p{
+        font-size: 1rem;
+        padding: .5rem 1rem;
+        letter-spacing: .1rem;
+        padding: 1.5rem 1rem;
+        width: 100%;
+    }
     #header_info{
+        font-size: .7rem;
+    }
+    /* #header_info{
         flex-direction: column;
         align-items: start;
-    }
-    #header_info_wraper{
+    } */
+    .header_info_wraper{
         justify-content: start;
+        margin-left: .3rem;
     }
-    #header_info_wraper img{
+    .header_info_wraper img{
+        height: 14px;
         margin: .2rem;
+    }
+    #navbar_menu{
+        flex-direction: column;
+        width: 100%;
+    }
+    #buttons{
+        margin-top: 13rem;
     }
     #google_map{
         width: 90%;
@@ -525,6 +591,26 @@ width: 100%;
 @media(max-width:500px){
     h1{
         font-size: 1.5rem;
+    }
+    #menu_option0{
+        background-image: url(img/background5.jpg);
+        background-position-y: 0;
+    }
+    #header_info{
+        font-size: .6rem;
+    }
+    .header_info_wraper{
+        margin-left: .2rem;
+    }
+    .header_info_wraper img{
+        margin: .1rem;
+        height: 11px;
+    }
+    #buttons{
+        margin-top: 10rem;
+    }
+    .buttons_options{
+        font-size: .9rem;
     }
     #medical_icons img{
         height: 24px;

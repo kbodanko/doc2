@@ -16,14 +16,94 @@ let buttons = document.querySelector('#buttons');
 let okButtons = document.querySelectorAll('.ok_button');
 let prevScrollpos = window.pageYOffset;
 let content_fields = document.querySelectorAll('.content');
+let windowWidth = window.innerWidth;
+let isDropDown = false;
+let mobileMenu = document.createElement('div');
+// let menu_option0 = document.querySelector('#menu_option0');
+
+function expandCollapse() {
+    if (isDropDown) {
+        mobileMenu.style.transform = 'translateY(-27rem)';
+        // menu_option0.filter = 'brightness(100%)';
+        // document.querySelector('#menu_option1').filter = 'brightness(100%)';
+        // content_fields[i].style.filter = 'brightness(100%)';
+        // document.querySelector('#menu_option5').filter = 'brightness(50%)';
+        for (let i = 0; i < content_fields.length; i++) {
+            // document.querySelector('#menu_option0').filter = 'brightness(100%)';
+            // document.querySelector('#menu_option1').filter = 'brightness(100%)';
+            content_fields[i].style.filter = 'brightness(100%)';
+            content_fields[3].style.filter = 'brightness(50%)';
+            document.querySelector('#content_bg').style.filter = 'brightness(100%)';
+
+            // document.querySelector('#menu_option5').filter = 'brightness(50%)';
+            // document.querySelector('#content_bg').style.filter = 'brightness(100%)';
+            console.log('drk', content_fields[i].style.filter);
+        }
+    } else {
+
+        for (let i = 0; i < content_fields.length; i++) {
+            content_fields[i].style.filter = 'brightness(20%)';
+            content_fields[3].style.filter = 'brightness(20%)';
+
+
+            // document.querySelector('#content_bg').style.filter = 'brightness(20%)';
+            console.log('drk', content_fields[i].style.filter);
+        }
+        document.querySelector('#content_bg').style.filter = 'brightness(20%)';
+        if (windowWidth <= 500) {
+            // mobileMenu.style.transform = 'scale(1)';
+            mobileMenu.style.transform = 'translateY(5.6rem)';
+        } else if (windowWidth <= 600) {
+            // mobileMenu.style.transform = 'scale(1)';
+            mobileMenu.style.transform = 'translateY(6rem)';
+        }
+        // isDropDown ? mobileMenu.style.transform = 'translateYY(6rem)' : mobileMenu.style.transform = 'translateYY(-27rem)';
+    }
+
+    isDropDown = !isDropDown;
+
+}
+document.querySelector('#ham_menu').addEventListener('click', expandCollapse);
+mobileMenu.addEventListener('click', expandCollapse);
+// window.addEventListener('load', function () {
+//     console.log('600');
+function showMobileMenu() {
+    windowWidth = window.innerWidth;
+    console.log(windowWidth);
+    if (windowWidth < 600) {
+        console.log('show');
+        mobileMenu.setAttribute('id', 'mobile_menu');
+        document.querySelector('body').insertBefore(mobileMenu, document.querySelector('#header_nav'));
+        mobileMenu.appendChild(document.querySelector('#navbar_menu'));
+        console.log('#navbar_menu');
+    }
+}
+function hideMobileMenu() {
+    windowWidth = window.innerWidth;
+    if (windowWidth > 600) {
+        console.log('hide', windowWidth);
+        document.querySelector('#navbar').appendChild(document.querySelector('#navbar_menu'));
+    }
+}
+function showHideMobileMenu() {
+    console.log(window.innerWidth);
+    showMobileMenu();
+    hideMobileMenu();
+}
+// window.addEventListener('resize ', expandCollapse);
+window.onresize = showHideMobileMenu;
+// window.onresize = hideMobileMenu;
+showMobileMenu();
+// });
 
 fillMenu();
 document.querySelector('#menu_option5').style.filter = 'brightness(50%)';
 document.querySelector('#content_bg').style.filter = 'brightness(100%)';
-
+// window.addEventListener('click', function(){
+//     if(event.target!==mobileMenu)
+// })
 window.addEventListener('scroll', hideShowUpArrow);
 window.addEventListener('load', function () {
-    console.log('bounce');
     buttonWraper1.classList.add('animate__bounceInLeft');
     buttonWraper1.style.visibility = 'visible';
     buttonWraper2.classList.add('animate__bounceInRight');
@@ -39,10 +119,9 @@ buttonWraper1.addEventListener('click', promptOpen);
 buttonWraper3.addEventListener('click', promptOpen);
 window.addEventListener('click', closeWindow2);
 function closeWindow2() {
-    console.log(event.target !== buttons.childNodes);
-    if (event.target !== buttonWraper1 & event.target !== buttonWraper2 & event.target !== buttonWraper3 & event.target !== button1 & event.target !== button2 & event.target !== button3 & event.target !== img1 & event.target !== img2 & event.target !== img3 & event.target !== document.querySelector('#prompt1') & event.target !== document.querySelector('#prompt3')) {
+    if (event.target !== buttonWraper1 & event.target !== buttonWraper2 & event.target !== buttonWraper3 & event.target !== button1 & event.target !== button2 & event.target !== button3 & event.target !== img1 & event.target !== img2 & event.target !== img3 & event.target !== document.querySelector('#prompt1') & event.target !== document.querySelector('#prompt3') & windowWidth > 600) {
         closeWindow();
-        console.log('close');
+        console.log('closewin', windowWidth);
     }
 }
 
@@ -53,7 +132,6 @@ function promptOpen() {
         content_fields[i].style.filter = 'brightness(20%)';
         document.querySelector('#content_bg').style.filter = 'brightness(20%)';
         // content_fields[i].style.filter = 'blur(5px)';
-        console.log(content_fields[i].style.filter.brightness);
 
     }
     if (target === buttonWraper1 || target === button1 || target === img1) {
@@ -76,7 +154,6 @@ function closeWindow() {
         document.querySelector('#content_bg').style.filter = 'brightness(100%)';
 
         // content_fields[i].style.filter = 'blur(0)';
-        console.log(content_fields[i].style.filter.brightness);
     }
     window1.classList.add('animate__flipOutX');
     window1.classList.remove('animate__flipInX');
@@ -98,7 +175,6 @@ function hideShowUpArrow() {
     if (prevScrollpos > currentScrollPos & prevScrollpos < 10) {
         UpArrow.style.bottom = '-5rem';
     } else {
-        console.log(window.screen.width);
         if (window.screen.width >= 600) {
             UpArrow.style.bottom = '3rem';
         } else {
@@ -129,7 +205,6 @@ function fillMenu() {
 function scrollToElement() {
     let scrollTargetNumber = (event.target.id.length > 0 ? event.target.id : event.target.children[0].id).slice(2);
     let scrollTarget = '#menu_option' + scrollTargetNumber;
-    console.log(scrollTarget);
     document.querySelector(scrollTarget).scrollIntoView({ behavior: "smooth" });
 }
 
