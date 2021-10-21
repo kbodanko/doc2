@@ -9,7 +9,7 @@ let img1 = document.querySelector('#img1');
 let img2 = document.querySelector('#img2');
 let UpArrow = document.querySelector('#up_arrow_wraper');
 let rootElement = document.documentElement;
-let menuOptionsArray = ['Strona główna', 'Dla pacjenta', 'Gabinety', 'Pracownicy', 'Cennik', 'Kontakt'];
+let menuOptionsArray = ['Strona główna', 'Gabinety', 'Dla pacjenta', 'Pracownicy', 'Cennik', 'Kontakt'];
 let menuOptions = document.querySelectorAll('.navbar_menu_option');
 let menuOptionsP = document.querySelectorAll('.navbar_menu_option_p');
 let buttons = document.querySelector('#buttons');
@@ -40,7 +40,7 @@ function expandCollapse() {
         document.querySelector('#content_bg').style.filter = 'brightness(20%)';
         if (windowWidth <= 500) {
             mobileMenu.style.transform = 'translateY(5.6rem)';
-        } else if (windowWidth <= 600) {
+        } else if (windowWidth <= 652) {
             mobileMenu.style.transform = 'translateY(6rem)';
         }
     }
@@ -55,7 +55,7 @@ mobileMenu.addEventListener('click', expandCollapse);
 function showMobileMenu() {
     windowWidth = window.innerWidth;
     console.log(windowWidth);
-    if (windowWidth < 600) {
+    if (windowWidth <= 652) {
         console.log('show');
         mobileMenu.setAttribute('id', 'mobile_menu');
         document.querySelector('body').insertBefore(mobileMenu, document.querySelector('#header_nav'));
@@ -65,7 +65,7 @@ function showMobileMenu() {
 }
 function hideMobileMenu() {
     windowWidth = window.innerWidth;
-    if (windowWidth > 600) {
+    if (windowWidth >= 652) {
         console.log('hide', windowWidth);
         document.querySelector('#navbar').appendChild(document.querySelector('#navbar_menu'));
     }
@@ -104,7 +104,7 @@ buttonWraper1.addEventListener('click', promptOpen);
 buttonWraper3.addEventListener('click', promptOpen);
 window.addEventListener('click', closeWindow2);
 function closeWindow2() {
-    if (event.target !== buttonWraper1 & event.target !== buttonWraper2 & event.target !== buttonWraper3 & event.target !== button1 & event.target !== button2 & event.target !== button3 & event.target !== img1 & event.target !== img2 & event.target !== img3 & event.target !== document.querySelector('#prompt1') & event.target !== document.querySelector('#prompt3') & windowWidth > 600) {
+    if (event.target !== buttonWraper1 & event.target !== buttonWraper2 & event.target !== buttonWraper3 & event.target !== button1 & event.target !== button2 & event.target !== button3 & event.target !== img1 & event.target !== img2 & event.target !== img3 & event.target !== document.querySelector('#prompt1') & event.target !== document.querySelector('#prompt3') & windowWidth >= 652) {
         closeWindow();
         console.log('closewin', windowWidth);
     }

@@ -1,9 +1,10 @@
 body{
     margin: 0;
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(111, 111, 111);
 }
 header{
-    background-image: url(img/long_bg.jpg);
+    background-image: url(img/2554434.jpg);
     background-size: cover;
     background-position: center;
 }
@@ -188,7 +189,7 @@ button{
     padding: .2rem;
     cursor: pointer;
     border-radius: 9px;
-    box-shadow: -2px 2px 12px -3px gray;
+    /* box-shadow: -2px 2px 12px -3px gray; */
 }
 .buttons_wraper img{
     height: 22px;
@@ -204,7 +205,7 @@ button{
 }
 .buttons_wraper:hover{
     /* font-size: 1.25rem; */
-    background-color: rgba(121, 189, 206, 0.705)
+    background-color: rgb(123, 175, 174)
 }
 .buttons_wraper:hover .buttons_options{
     color: white;
@@ -251,9 +252,6 @@ h1{
 .content{
     transition: .3s; 
 }
-#menu_option1{
-    background-color: white;
-}
 #menu_option1 .heigh{
     padding-bottom: 0;
     margin-top: 0;
@@ -266,7 +264,7 @@ h1{
     margin: 2rem 0;
 }
 .heigh{
-    padding: 3rem 0;
+    padding: 2rem 0;
 }
 .content_wraper{
     font-family: 'Raleway', sans-serif;
@@ -274,7 +272,6 @@ h1{
     margin: 2rem 2rem 0 2rem;
     padding-bottom: 6rem;
     text-align: justify;
-    text-indent: 1.5rem;
 }
 .content_wraper p{
     margin: 0;
@@ -314,6 +311,93 @@ span{
     height: 9rem;
 }
 
+#menu_option1{
+    background-image: url('img/option1bg2.png');
+    background-size: cover;
+}
+#menu_option1 h1{
+    margin-bottom: -1rem;
+}
+.head_wraper{
+    display: flex;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    align-items: center;
+    
+}
+.head_wraper img{
+    height: 10rem;
+}
+.option1_content_waper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 3rem;
+    color: rgb(111, 111, 111);
+}
+/* .content_box{
+    width: 33%;
+} */
+.content_wraper_box{
+    margin: 0 1.3rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px -4px #849e9e;
+    /* border: 2px solid rgb(158, 192, 189); */
+}
+.headling_wraper{
+    display: flex;
+    justify-content: space-between;
+}
+.content_box_content{
+    text-align: justify;
+    margin: 1rem;
+    margin-top: 0;
+    padding-top: 0;
+    /* background-color: rgba(255, 255, 255, 0.644); */
+    padding: .5rem;
+    border-radius: 8px;
+}
+.img_box{
+    /* position: relative;
+    top: -3rem;
+    right: -15.5rem; */
+    padding: 1rem;
+    border-radius: 5rem;
+    background: linear-gradient(to right, #81ada3, #c8e2e7);
+    height: 2.5rem;
+    width: 2.5rem;
+    margin: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.img_box img{
+    border-radius: 2.5rem;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;        /* background-image: url(img/laryngology.png); */
+    background-size: cover;
+}
+.content_box_H{
+    text-align: center;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    font-variant: small-caps;
+}
+/* .content_box_img{
+    display: flex;
+    justify-content: end;
+
+} */
+.content_box_img img{
+    height: 4rem;
+}
+
 #up_arrow_wraper{
     padding: .5rem;
     position: fixed;
@@ -342,7 +426,6 @@ width: 100%;
 }
 #menu_option5{
     margin-top: -.5rem;
-    overflow: hidden;
     background-image: url(img/medical_background.jpg);
     background-position: center;
     background-size: cover;
@@ -457,11 +540,17 @@ width: 100%;
     .prompts_window{
         width: 50%;
     }
+    .option1_content_waper{
+            grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media(max-width:1000px){
     .contact_info_wraper{
         width: 80%;
+    }
+    #menu_option1 h1{
+        margin-bottom: 1rem;
     }
 }
 @media(max-width:900px){
@@ -500,6 +589,9 @@ width: 100%;
     #menu_option0{
         background-image: url(img/long_bg2.jpg);
     }
+    .option1_content_waper{
+        grid-template-columns: repeat(1, 1fr);
+    }
     .navbar_menu_option p{
         padding: 0 .2rem;
         font-size: 1.05rem;
@@ -514,6 +606,9 @@ width: 100%;
     }
     #lab{
         display: block;
+    }
+    .head_wraper{
+        flex-direction: column;
     }
     #content_bg_wraper{
         margin-left: -5rem;
@@ -545,7 +640,7 @@ width: 100%;
         margin-right: -9rem;
     } */
 }
-@media(max-width:600px){
+@media(max-width:650px){
     
     #ham_menu{
         display: flex;
